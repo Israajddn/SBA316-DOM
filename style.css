@@ -1,0 +1,36 @@
+
+body {
+    background-color: #fefae0;
+    color: #344e41;
+}
+
+
+#clickme {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #e9edc9;
+    font-size: larger;
+    margin: 20px 30% 20px 30%;
+    transition-property: background-color;
+}
+#clickme:hover {
+    background-color: #ccd5ae;
+}
+ 
+/* The below code is to center everything in the middle */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body {
+    display: table;
+}
+
+.my-block {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
