@@ -27,21 +27,21 @@
         <!-- popup window -->
         <div class="popup" id="popup">
             <!-- form -->
-            <form>
+            <form id="userForm">
                 <!-- name -->
                 <div style="margin-top: 25px;">
-                    <label for="name" class="name">Name</label>
+                    <label for="name">Name</label>
                     <input type="text" class="name" placeholder="Enter your name">
                 </div>
                 <!-- email -->
                 <div>
-                    <label for="email1" class="email">Email</label>
+                    <label for="email1">Email</label>
                     <input type="email" class="email" placeholder="Enter your email">
                 </div>
                 <!-- birth month -->
                 <div>
-                    <label for="birthMonth" class="birthMonth">Birth Month</label>
-                    <input type="text" class="birthMonth" placeholder="Enter your birth month">
+                    <label for="birthMonth">Birth Month</label>
+                    <input type="number" class="birthMonth" placeholder="Enter your birth month">
                 </div>
                 <!-- checkbox -->
                 <div>
@@ -49,15 +49,17 @@
                     <label class="checkbox" for="sendResult">I would like the result to be sent to my email.</label>
                 </div>
                 <!-- button2 -->
-                <button type="submit" class="btn2">
-                    Submit
-                </button>
-                <button type="submit" class="btn2" onclick="closePopup()">
+                <a href="personality.html">
+                    <button type="submit" class="btn2">
+                        Submit
+                    </button>
+                </a>
+                <button type="button" class="btn2" onclick="closePopup()">
                     Close
                 </button>
             </form>
-
         </div>
+
     </div>
 
     <script type="text/javascript" src="index.js"></script>

@@ -1,14 +1,14 @@
-
 body {
     background-color: #fefae0;
     color: #344e41;
 }
 
 /* buttons */
-.btn, .btn2 {
+.btn,
+.btn2 {
     padding: 10px 60px;
     background-color: #e9edc9;
-    color: #344e41; 
+    color: #344e41;
     border: 0;
     outline: none;
     cursor: pointer;
@@ -18,12 +18,14 @@ body {
     transition-property: background-color;
 
 }
-.btn:hover, .btn2:hover {
+
+.btn:hover,
+.btn2:hover {
     background-color: #ccd5ae;
 }
 
 /* popup window */
-.popup{
+.popup {
     width: 400px;
     background-color: #faedcd;
     border-radius: 6px;
@@ -36,14 +38,16 @@ body {
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
 }
-.open-popup{
+
+.open-popup {
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
 }
- 
+
 /* The below code is to center everything in the middle */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     padding: 0;
