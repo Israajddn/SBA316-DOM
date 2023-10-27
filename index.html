@@ -11,19 +11,53 @@
 <body>
 
     <div class="my-block">
+
+        <!-- website information -->
         <div style="text-align:center;">
             <h1>Know Your Personality Based on BIRTH MONTH</h1>
             <img src="personality.webp" alt="person hiding their face" width="50%">
             <h4>Are you a natural leader? Born to stand out? Birth month might be key your personality.</h4>
         </div>
 
-        <a href="#" style="color: #344e41; text-decoration: none;">
-            <div id="clickme">
-                <div style="margin: 10px;">
-                    <p>click here to enter your information</p>
+        <!-- button -->
+        <button type="submit" class="btn" onclick="openPopup()">
+            Click here to enter your information
+        </button>
+
+        <!-- popup window -->
+        <div class="popup" id="popup">
+            <!-- form -->
+            <form>
+                <!-- name -->
+                <div style="margin-top: 25px;">
+                    <label for="name" class="name">Name</label>
+                    <input type="text" class="name" placeholder="Enter your name">
                 </div>
-            </div>
-        </a>
+                <!-- email -->
+                <div>
+                    <label for="email1" class="email">Email</label>
+                    <input type="email" class="email" placeholder="Enter your email">
+                </div>
+                <!-- birth month -->
+                <div>
+                    <label for="birthMonth" class="birthMonth">Birth Month</label>
+                    <input type="text" class="birthMonth" placeholder="Enter your birth month">
+                </div>
+                <!-- checkbox -->
+                <div>
+                    <input type="checkbox" class="checkbox">
+                    <label class="checkbox" for="sendResult">I would like the result to be sent to my email.</label>
+                </div>
+                <!-- button2 -->
+                <button type="submit" class="btn2">
+                    Submit
+                </button>
+                <button type="submit" class="btn2" onclick="closePopup()">
+                    Close
+                </button>
+            </form>
+
+        </div>
     </div>
 
     <script type="text/javascript" src="index.js"></script>
