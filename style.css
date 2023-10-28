@@ -5,7 +5,7 @@ body {
 
 /* buttons */
 .btn,
-.btn2 {
+.btn2, .btn3 {
     padding: 10px 60px;
     background-color: #e9edc9;
     color: #344e41;
@@ -20,12 +20,13 @@ body {
 }
 
 .btn:hover,
-.btn2:hover {
+.btn2:hover, 
+.btn3:hover {
     background-color: #ccd5ae;
 }
 
 /* popup window */
-.popup {
+/* .popup {
     width: 400px;
     background-color: #faedcd;
     border-radius: 6px;
@@ -43,7 +44,9 @@ body {
     visibility: visible;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
-}
+} */
+
+
 
 /* The below code is to center everything in the middle */
 html,

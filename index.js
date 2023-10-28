@@ -6,6 +6,11 @@ function openPopup() {
 function closePopup() {
     popup.classList.remove("open-popup");
 };
+let myWindow;
+function newWindow() {
+    myWindow = window.open("https://brooklynmartialarts.net/birthday-parties/know-your-childs-personality-based-on-birth-month/");
+    myWindow.focus();
+}
 
 // array of personalities
 const personalities = [`JANUARY – People born in January are born to be leaders. They will crave independence very early on, so get used to hearing the words ‘I will do’ often. They also love attention and will expect you to applaud every time they achieve a milestone. They are analytical as well as clever and creative which is the perfect combination. They stand out from the crowd and with an obvious charisma people are always happy to follow them. It is normal for them to follow a more traditional life than others.`,
@@ -29,6 +34,9 @@ const Email = document.querySelector(".email");
 const checkbox = document.querySelector(".checkbox");
 const birthMonth = document.querySelector(".birthMonth");
 const submitBtn = document.querySelector(".btn2");
+const personalityAnalysis = document.querySelector(".personalityAnalysis");
+const welcomeMessage = document.querySelector("#welcomeMessage");
+const analysis = document.querySelector("#analysis");
 
 function checkForm(e) {
     e.preventDefault();
@@ -37,14 +45,14 @@ function checkForm(e) {
         alert("Error: Username cannot be blank.");
         UserName.focus();
         return false;
-    }
+    };
 
     // email check
     if (Email.type !== "email") {
         alert("Error:The email must be a valid email address.");
         Email.focus();
         return false;
-    }
+    };
 
     re = /(?=.*@)(?!.*example).*/;
 
@@ -52,22 +60,60 @@ function checkForm(e) {
         alert("Error: The email must not be from the domain example.com.");
         Email.focus();
         return false;
-    }
+    };
 
     // birthMonth check
     if (birthMonth.value < 1 || birthMonth.value > 12) {
         alert("Error: birth month should be a number between 1-12!");
         birthMonth.focus();
         return false;
-    }
-    function goToPersonality(btn){
-        window.location.href = "personality.html"
     };
 
-    return goToPersonality(submitBtn);
+    function showInformation() {
+        welcomeMessage.textContent = "Welcome " + UserName.value + "!";
+        switch (birthMonth.value) {
+            case 1:
+                analysis.innerHTML = personalities[0];
+                break;
+            case 2:
+                analysis.textContent = personalities[1];
+                break;
+            case 3:
+                analysis.textContent = personalities[2];
+                break;
+            case 4:
+                analysis.textContent = personalities[3];
+                break;
+            case 5:
+                analysis.textContent = personalities[4];
+                break;
+            case 6:
+                analysis.textContent = personalities[5];
+                break;
+            case 7:
+                analysis.textContent = personalities[6];
+                break;
+            case 8:
+                analysis.textContent = personalities[7];
+                break;
+            case 9:
+                analysis.textContent = personalities[8];
+                break;
+            case 10:
+                analysis.textContent = personalities[9];
+                break;
+            case 11:
+                analysis.textContent = personalities[10];
+                break;
+            case 12:
+                analysis.textContent = personalities[11];
+                break;
+        };
+        console.log(personalities);
+    };
+
+    return showInformation();
 
 }
-
-
 
 form.addEventListener("submit", checkForm);
