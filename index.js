@@ -1,17 +1,3 @@
-// popup screen
-let popup = document.getElementById("popup");
-function openPopup() {
-    popup.classList.add("open-popup");
-};
-function closePopup() {
-    popup.classList.remove("open-popup");
-};
-let myWindow;
-function newWindow() {
-    myWindow = window.open("https://brooklynmartialarts.net/birthday-parties/know-your-childs-personality-based-on-birth-month/");
-    myWindow.focus();
-}
-
 // array of personalities
 const personalities = {
     1: `JANUARY – People born in January are born to be leaders. They will crave independence very early on, so get used to hearing the words ‘I will do’ often. They also love attention and will expect you to applaud every time they achieve a milestone. They are analytical as well as clever and creative which is the perfect combination. They stand out from the crowd and with an obvious charisma people are always happy to follow them. It is normal for them to follow a more traditional life than others.`,
@@ -30,6 +16,7 @@ const personalities = {
 
 
 // form check 
+// Cache at least one element using querySelector or querySelectorAll.
 const form = document.querySelector("#userForm");
 const UserName = document.querySelector(".name");
 const Email = document.querySelector(".email");
@@ -37,16 +24,48 @@ const checkbox = document.querySelector(".checkbox");
 const birthMonth = document.querySelector(".birthMonth");
 const submitBtn = document.querySelector(".btn2");
 const personalityAnalysis = document.querySelector(".personalityAnalysis");
+// firstChild, lastChild
+const personalityAnalysisFristChild = personalityAnalysis.firstElementChild;
+const personalityAnalysisLastChild = personalityAnalysis.lastElementChild;
 const welcomeMessage = document.querySelector("#welcomeMessage");
 const analysis = document.querySelector("#analysis");
 const allInputs = document.querySelectorAll('input');
+const myblock = document.querySelector(".my-block");
 
+// Create at least one element using createElement.
+const addSource = document.createElement("a");
+addSource.setAttribute("href", "https://brooklynmartialarts.net/birthday-parties/know-your-childs-personality-based-on-birth-month/");
+addSource.setAttribute("target", "_blank");
+addSource.textContent = "Source";
+// style
+addSource.style.color = "#344e41";
+
+
+// popup screen
+// Cache at least one element using selectElementById.
+let popup = document.getElementById("popup");
+function openPopup() {
+    // classList 
+    popup.classList.add("open-popup");
+    // textContent
+    personalityAnalysisFristChild.textContent = "";
+    personalityAnalysisLastChild.textContent = "";
+    if (document.querySelector("a") != null) {
+        document.querySelector("a").remove();
+    };
+};
+function closePopup() {
+    popup.classList.remove("open-popup");
+};
+
+// DOM event-based validation
 function checkForm(e) {
     e.preventDefault();
     // UserName check
     if (UserName.value == "") {
-        alert("Error: Username cannot be blank.");
-        UserName.focus();
+        // Browser Object Model properties
+        window.alert("Error: Username cannot be blank.");
+        UserName.window.focus();
         return false;
     };
 
@@ -74,15 +93,21 @@ function checkForm(e) {
 
 
     function showInformation() {
+        // Modify at least one attribute of an element in response to user interaction.
         welcomeMessage.textContent = "Welcome " + UserName.value + "!";
         const birthMonthValue = birthMonth.value;
         analysis.textContent = personalities[birthMonthValue];
         popup.classList.remove("open-popup");
+        // Iterate over a collection of elements to accomplish some task.
         allInputs.forEach(singleInput => singleInput.value = '');
+        // Use appendChild and/or prepend to add new elements to the DOM.
+        myblock.appendChild(addSource);
+
     };
 
     return showInformation();
 
 }
 
+// event listeners
 form.addEventListener("submit", checkForm);
