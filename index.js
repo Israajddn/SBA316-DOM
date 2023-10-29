@@ -39,6 +39,7 @@ const submitBtn = document.querySelector(".btn2");
 const personalityAnalysis = document.querySelector(".personalityAnalysis");
 const welcomeMessage = document.querySelector("#welcomeMessage");
 const analysis = document.querySelector("#analysis");
+const allInputs = document.querySelectorAll('input');
 
 function checkForm(e) {
     e.preventDefault();
@@ -76,6 +77,8 @@ function checkForm(e) {
         welcomeMessage.textContent = "Welcome " + UserName.value + "!";
         const birthMonthValue = birthMonth.value;
         analysis.textContent = personalities[birthMonthValue];
+        popup.classList.remove("open-popup");
+        allInputs.forEach(singleInput => singleInput.value = '');
     };
 
     return showInformation();
